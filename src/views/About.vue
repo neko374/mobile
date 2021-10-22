@@ -1,5 +1,5 @@
 <template>
   <div class="about">
-    <div>你好</div>
+    <div不会写不知道 </div>
   </div>
 </template>
