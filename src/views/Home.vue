@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    到此一游
+    
   </div>
 </template>
 
