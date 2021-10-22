@@ -1,26 +1,10 @@
-# mobile
-
-## Project setup
+# 在自己电脑
 ```
-npm install
+cnpm i
 ```
 
-### Compiles and hot-reloads for development
+# 然后才能跑服务
+
 ```
 npm run serve
 ```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-### 洪
-### dyw
-### jwh
-### zcc
-### lb
-### wxs
-### wx
