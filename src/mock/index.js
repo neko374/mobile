@@ -6,7 +6,8 @@ let newsinfo = Mock.mock({
             "title": "@ctitle(10,18)",
             "time": "@date",
             "image": "@image",
-            "name": "@cname"
+            "name": "@cname",
+            "password|6-12": "string"
         }
     ]
 })
