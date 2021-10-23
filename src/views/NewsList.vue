@@ -21,6 +21,12 @@
         </router-link>
       </van-cell>
     </van-list>
+    <van-pagination
+      v-model="currentPage"
+      :total-items="lists.length"
+      :items-per-page="5"
+      mode="simple"
+    />
     <div style="height: 3rem"></div>
     <van-tabbar v-model="active">
       <van-tabbar-item icon="home-o">首页</van-tabbar-item>
@@ -47,7 +53,6 @@ export default {
     return {
       active: "",
       currentPage: 1,
-      pagesize: 4,
       lists: [],
       ruleForm: {
         id: "",
