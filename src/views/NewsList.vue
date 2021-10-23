@@ -1,10 +1,13 @@
 <template>
   <div>
     <van-nav-bar title="商城公告" left-arrow @click-left="onClickLeft" />
-    <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
+    <van-swipe class="my-swipe" :autoplay="3000" indicator-color="orange">
       <van-swipe-item v-for="(item, index) in lists" :key="index"
-        ><img :src="item.image"
-      /></van-swipe-item>
+        ><img :src="item.image" />
+        <div class="sw">
+          {{ item.title }}
+        </div></van-swipe-item
+      >
     </van-swipe>
     <van-list>
       <van-cell v-for="(item, index) in lists" :key="index">
@@ -77,9 +80,20 @@ export default {
   background-color: #39a9ed;
 }
 
+.sw {
+  width: 100%;
+  height: 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 2rem;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
 .van-swipe-item {
   width: 100%;
   height: 12rem;
+  position: relative;
 }
 
 .van-swipe-item img {

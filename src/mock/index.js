@@ -3,7 +3,7 @@ let newsinfo = Mock.mock({
     "data|10": [
         {
             "id|+1": 1,
-            "title": "@ctitle(10,20)",
+            "title": "@ctitle(10,18)",
             "time": "@date",
             "image": "@image"
         }
