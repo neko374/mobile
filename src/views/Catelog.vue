@@ -32,13 +32,16 @@
         </van-grid>
       </div>
     </div>
+    <navb></navb>
   </div>
 </template>
 
 <script>
 import axios from "axios";
 import { Toast } from "vant";
+import navb from "../components/navb.vue";
 export default {
+  components: { navb },
   data() {
     return {
       value: "",
