@@ -14,7 +14,9 @@ import './assets/css/zy_vip.css'
 import axios from "axios"
 import './comm'
 import './mock'
-import { Tabbar, TabbarItem, NavBar, Swipe, SwipeItem, List, Pagination, Search, Sidebar, SidebarItem, Grid, GridItem, CellGroup, Cell ,Button,Col, Row,Icon ,Lazyload , Collapse, CollapseItem,Image as VanImage,Panel} from 'vant'
+import { Tabbar, TabbarItem, NavBar, Swipe, SwipeItem, List,
+   Pagination, Search, Sidebar, SidebarItem, Grid, GridItem, CellGroup, Cell ,Button,Col,
+    Row,Icon ,Lazyload , Collapse, CollapseItem,Image as VanImage,Panel ,Pagination} from 'vant'
 Vue.config.productionTip = false
 Vue.prototype.$http = axios
 Vue.use(Tabbar)
@@ -41,6 +43,7 @@ Vue.use(Collapse);
 Vue.use(CollapseItem);
 Vue.use(VanImage);
 Vue.use(Panel);
+Vue.use(Pagination);
 new Vue({
   router,
   store,
