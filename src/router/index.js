@@ -69,7 +69,12 @@ const routes = [
     path: '/userbackorderck',
     name: 'UserBackOrderCk',
     component: () => import('../views/UserBackOrderCk.vue')
-  }
+  },
+  {
+    path: '/commentPinj',
+    name: 'CommentPinj',
+    component: () => import('../views/CommentPinj.vue')
+  },
 ]
 
 const router = new VueRouter({
