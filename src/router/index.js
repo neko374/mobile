@@ -82,8 +82,8 @@ const routes = [
   },
   {
     path: '/usercomment',
-    name: 'Usercomment',
-    component: () => import('../views/Usercomment.vue')
+    name: 'UserComment',
+    component: () => import('../views/UserComment.vue')
   },
 ]
 
