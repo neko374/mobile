@@ -31,7 +31,6 @@ Vue.use(Grid);
 Vue.use(GridItem);
 Vue.use(CellGroup)
 Vue.use(Cell)
-//
 Vue.use(Button);
 Vue.use(Col);
 Vue.use(Row);
