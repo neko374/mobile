@@ -75,6 +75,16 @@ const routes = [
     name: 'CommentPinj',
     component: () => import('../views/CommentPinj.vue')
   },
+  {
+    path: '/commentShaid',
+    name: 'CommentShaid',
+    component: () => import('../views/CommentShaid.vue')
+  },
+  {
+    path: '/usercomment',
+    name: 'Usercomment',
+    component: () => import('../views/Usercomment.vue')
+  },
 ]
 
 const router = new VueRouter({
