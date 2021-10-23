@@ -24,6 +24,21 @@ const routes = [
     path: '/newsList',
     name: 'NewsList',
     component: () => import('../views/NewsList.vue')
+  },
+  {
+    path: '/category',
+    name: 'Category',
+    component: () => import('../views/Category.vue')
+  },
+  {
+    path: '/categoryList',
+    name: 'CategoryList',
+    component: () => import('../views/Category.vue')
+  },
+  {
+    path: '/catelog',
+    name: 'Catelog',
+    component: () => import('../views/Catelog.vue')
   }
 ]
 

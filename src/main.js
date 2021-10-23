@@ -14,7 +14,7 @@ import './assets/css/zy_vip.css'
 import axios from "axios"
 import './comm'
 import './mock'
-import { Tabbar, TabbarItem, NavBar, Swipe, SwipeItem, List, Pagination } from 'vant'
+import { Tabbar, TabbarItem, NavBar, Swipe, SwipeItem, List, Pagination, Search, Sidebar, SidebarItem } from 'vant'
 Vue.config.productionTip = false
 Vue.prototype.$http = axios
 Vue.use(Tabbar)
@@ -24,6 +24,9 @@ Vue.use(Swipe)
 Vue.use(SwipeItem)
 Vue.use(List)
 Vue.use(Pagination)
+Vue.use(Search)
+Vue.use(Sidebar);
+Vue.use(SidebarItem);
 new Vue({
   router,
   store,
