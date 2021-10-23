@@ -5,7 +5,8 @@ let newsinfo = Mock.mock({
             "id|+1": 1,
             "title": "@ctitle(10,18)",
             "time": "@date",
-            "image": "@image"
+            "image": "@image",
+            "name": "@cname"
         }
     ]
 })

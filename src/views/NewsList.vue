@@ -2,7 +2,7 @@
   <div>
     <van-nav-bar title="商城公告" left-arrow @click-left="onClickLeft" />
     <van-swipe class="my-swipe" :autoplay="3000" indicator-color="orange">
-      <van-swipe-item v-for="(item, index) in lists" :key="index"
+      <van-swipe-item v-for="item in lists" :key="item.id"
         ><img :src="item.image" />
         <div class="sw">
           {{ item.title }}
@@ -10,7 +10,7 @@
       >
     </van-swipe>
     <van-list>
-      <van-cell v-for="(item, index) in lists" :key="index">
+      <van-cell v-for="item in lists" :key="item.id">
         <router-link to="/NewsXq">
           <div class="lis">
             <div style="float: left">
@@ -61,7 +61,7 @@ export default {
       lists: [],
       ruleForm: {
         id: "",
-        name: "",
+        title: "",
         time: "",
         image: "",
       },

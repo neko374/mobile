@@ -11,34 +11,64 @@
         @search="onSearch"
       />
     </form>
-    <van-sidebar v-model="activeKey">
-      <van-sidebar-item title="零食点心" />
-      <van-sidebar-item title="酒水" />
-      <van-sidebar-item title="新鲜水果" />
-      <van-sidebar-item title="生活用品" />
-      <van-sidebar-item title="体育用品" />
-      <van-sidebar-item title="文具" />
-      <van-sidebar-item title="积分专区" />
-    </van-sidebar>
+    <div style="display: flex">
+      <van-sidebar v-model="activeKey">
+        <van-sidebar-item title="零食点心" />
+        <van-sidebar-item title="酒水" />
+        <van-sidebar-item title="新鲜水果" />
+        <van-sidebar-item title="生活用品" />
+        <van-sidebar-item title="体育用品" />
+        <van-sidebar-item title="文具" />
+        <van-sidebar-item title="积分专区" />
+      </van-sidebar>
+      <div style="width: 78%">
+        <van-grid :column-num="3">
+          <van-grid-item
+            v-for="item in lists"
+            :key="item.id"
+            :icon="item.image"
+            :text="item.name"
+          />
+        </van-grid>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import axios from "axios";
 import { Toast } from "vant";
 export default {
   data() {
     return {
       value: "",
       activeKey: 0,
+      lists: [],
+      ruleForm: {
+        id: "",
+        name: "",
+        image: "",
+      },
     };
+  },
+  created() {
+    this.getData();
   },
   methods: {
     onSearch(val) {
       Toast(val);
     },
+    async getData() {
+      const result = await axios.get("/newsList");
+      this.lists = result.data;
+    },
   },
 };
 </script>
 
-<style>
+<style scoped>
+body html {
+  height: 100%;
+  width: 100%;
+}
 </style>
