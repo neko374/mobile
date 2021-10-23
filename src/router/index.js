@@ -85,6 +85,21 @@ const routes = [
     name: 'UserComment',
     component: () => import('../views/UserComment.vue')
   },
+  {
+    path: '/login',
+    name: 'Login',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Login.vue')
+  },
+  {
+    path: '/register',
+    name: 'Register',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Register.vue')
+  },
+  {
+    path: '/forget',
+    name: 'Forget',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Forget.vue')
+  },
 ]
 
 const router = new VueRouter({
