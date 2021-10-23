@@ -3,13 +3,11 @@
 </template>
 
 <script>
-import Navb from '../components/navb.vue'
+import navb from "../components/navb.vue";
 export default {
-
-}
+  components: { navb },
+};
 </script>
 
-<styl
-Navbe>
-
+<style>
 </style>
