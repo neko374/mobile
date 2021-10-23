@@ -48,26 +48,17 @@ const routes = [
   {
     path: '/confirm',
     name: 'Confirm',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Confirm.vue')
+    component: () => import('../views/Confirm.vue')
   },
   {
     path: '/flow',
     name: 'flow',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/flow.vue')
+    component: () => import('../views/flow.vue')
   },
   {
     path: '/goods',
     name: 'Goods',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Goods.vue')
+    component: () => import('../views/Goods.vue')
   },
   {
     path: '/userbackorder',
