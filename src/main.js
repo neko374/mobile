@@ -17,7 +17,8 @@ import './mock'
 import {
   Tabbar, TabbarItem, NavBar, Swipe, SwipeItem, List,
   Pagination, Search, Sidebar, SidebarItem, Grid, GridItem, CellGroup, Cell, Button, Col,
-  Row, Icon, Lazyload, Collapse, CollapseItem, Image as VanImage, Panel,Form ,Tab, Tabs
+  Row, Icon, Lazyload, Collapse, CollapseItem, Image as VanImage, Panel,Form ,Tab, Tabs,
+  DropdownMenu, DropdownItem,Popover,Dialog,Checkbox, CheckboxGroup,Uploader,RadioGroup, Radio
 } from 'vant'
 import  Field  from 'vant';//单拿出来不加中括号
 Vue.config.productionTip = false
@@ -48,6 +49,15 @@ Vue.use(Panel);
 Vue.use(Form);
 Vue.use(Tab);
 Vue.use(Tabs);
+Vue.use(DropdownMenu);
+Vue.use(DropdownItem);
+Vue.use(Popover);
+Vue.use(Dialog);
+Vue.use(Checkbox);
+Vue.use(CheckboxGroup);
+Vue.use(Uploader);
+Vue.use(Radio);
+Vue.use(RadioGroup);
 new Vue({
   router,
   store,

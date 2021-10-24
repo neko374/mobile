@@ -13,3 +13,26 @@ let newsinfo = Mock.mock({
     ]
 })
 Mock.mock("/newsList", newsinfo.data)
+
+
+const list = Mock.mock({
+    "data|3":[
+        {
+            "id|+1":1,
+            "title":"@ctitle",
+        }
+    ]
+})
+//访问地址,访问数据
+Mock.mock("/news/list",list.data)
+//添加
+Mock.mock("/news/add","post",(option)=>{
+    const obj = JSON.parse(option.body);
+    obj.id = list.data[list.data.length-1].id+1
+    list.data.push(obj)
+    console.log(option);
+    return{
+        msg:"添加成功",
+        state:"200"
+    }
+})

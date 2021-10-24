@@ -140,6 +140,16 @@ const routes = [
     name: 'Forget',
     component: () => import(/* webpackChunkName: "about" */ '../views/Forget.vue')
   },
+  {
+    path: '/userbackordertk',
+    name: 'UserBackOrderTk',
+    component: () => import('../views/UserBackOrderTk.vue')
+  },
+  {
+    path: '/usermsg',
+    name: 'UserMsg',
+    component: () => import('../views/UserMsg.vue')
+  }
 ]
 
 const router = new VueRouter({
