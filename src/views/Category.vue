@@ -30,9 +30,11 @@
         @click.native="changeIdx(2)"
         >价格</router-link
       >
-      <router-link to="/categoryList" @click.native="changeIdx(0)"
-        ><van-icon name="send-gift-o" color="blue"
-      /></router-link>
+      <router-link
+        :class="{ active: idx === 3 }"
+        to="/category/list"
+        @click.native="changeIdx(3)"
+        ><van-icon name="bars" color="blue" /></router-link>
     </div>
     <div><router-view /></div>
     <navb></navb>

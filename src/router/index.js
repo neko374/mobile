@@ -48,12 +48,11 @@ const routes = [
         path: 'jg',
         component: () => import('../views/category/category3.vue'),
       },
+      {
+        path: 'list',
+        component: () => import('../views/CategoryList.vue')
+      },
     ]
-  },
-  {
-    path: '/categoryList',
-    name: 'CategoryList',
-    component: () => import('../views/Category.vue')
   },
   {
     path: '/catelog',
