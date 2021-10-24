@@ -86,6 +86,32 @@ const routes = [
     component: () => import('../views/UserComment.vue')
   },
   {
+    path: '/user',
+    name: 'User',
+    component: () => import('../views/User.vue')
+  },
+  {
+    path: '/useraddr',
+    name: 'UserAddr',
+    component: () => import('../views/UserAddr.vue')
+  },
+  {
+    path: '/useraddrdizhi',
+    name: 'UserAddrDizhi',
+    component: () => import('../views/UserAddrDizhi.vue')
+  },
+
+  {
+    path: '/useraddrnew',
+    name: 'UserAddrNew',
+    component: () => import('../views/UserAddrNew.vue')
+  },
+  {
+    path: '/usershouc',
+    name: 'UserShouC',
+    component: () => import('../views/UserShouC.vue')
+  },
+  {
     path: '/login',
     name: 'Login',
     component: () => import(/* webpackChunkName: "about" */ '../views/Login.vue')
