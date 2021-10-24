@@ -33,7 +33,22 @@ const routes = [
   {
     path: '/category',
     name: 'Category',
-    component: () => import('../views/Category.vue')
+    component: () => import('../views/Category.vue'),
+    redirect: "/category/zh",
+    children: [
+      {
+        path: 'zh',
+        component: () => import('../views/category/category1.vue'),
+      },
+      {
+        path: 'xl',
+        component: () => import('../views/category/category2.vue'),
+      },
+      {
+        path: 'jg',
+        component: () => import('../views/category/category3.vue'),
+      },
+    ]
   },
   {
     path: '/categoryList',
