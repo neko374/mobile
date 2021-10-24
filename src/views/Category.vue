@@ -82,6 +82,7 @@ form {
   width: 100%;
   top: 0;
   left: 0;
+  z-index: 10;
 }
 .bar {
   width: 100%;
@@ -93,6 +94,7 @@ form {
   font-size: 0.8rem;
   padding: 0.6rem 0;
   line-height: 1rem;
+  z-index: 9;
 }
 .router-link {
   color: black;

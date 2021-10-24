@@ -1,12 +1,11 @@
 <template>
   <div>
     <van-grid :column-num="2">
-      <van-grid-item
-        v-for="item in lists"
-        :key="item.id"
-        :icon="item.image"
-        :text="item.price"
-      />
+      <div v-for="item in lists" :key="item.id">
+        <img :src="item.image" />
+        <p>{{ item.name }}</p>
+        <p style="color: red">￥{{ item.price }}</p>
+      </div>
     </van-grid>
   </div>
 </template>
@@ -26,7 +25,7 @@ export default {
       lists: [],
       ruleForm: {
         id: "",
-        cname: "",
+        name: "",
         image: "",
         price: "",
       },
@@ -41,5 +40,9 @@ export default {
 <style scoped>
 .van-grid {
   float: left;
+}
+.van-grid img {
+  width: 10rem;
+  height: 10rem;
 }
 </style>
