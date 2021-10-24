@@ -158,6 +158,24 @@ const routes = [
     name: 'UserMsg',
     component: () => import('../views/UserMsg.vue')
   }
+  ,
+  {
+    path: '/exchange',
+    name: 'Exchange',
+    component: () => import('../views/Exchange.vue')
+  }
+  ,
+  {
+    path: '/exchangelist',
+    name: 'Exchangelist',
+    component: () => import('../views/Exchangelist.vue')
+  },
+  ,
+  {
+    path: '/foodssku',
+    name: 'FoodsSku',
+    component: () => import('../components/FoodsSku.vue')
+  }
 ]
 
 const router = new VueRouter({
