@@ -1,15 +1,23 @@
 <template>
   <div>
     <van-row class="g-header">
-      <van-col span="3" offset="1" class="u-icon"
+      <van-col span="3" offset="1" class="u-icon" @click="back"
         ><van-icon name="arrow-left"
       /></van-col>
       <van-col span="16" class="texts">
         <span>订单详情</span>
       </van-col>
       <van-col span="3" offset="1" class="u-icon"
-        ><van-icon name="ellipsis"
-      /></van-col>
+        ><van-popover
+        v-model="showPopover"
+        theme="dark"
+        trigger="click"
+        :actions="actions"
+      >
+        <template #reference>
+          <van-icon name="ellipsis" />
+        </template>
+      </van-popover></van-col>
     </van-row>
     <van-row class="head-line">
       <van-col span="3" offset="1" class="u-icon">
@@ -81,7 +89,7 @@
         </div>
     </div>
     <div class="footer">
-        <van-button type="info" class="btn">查看物流信息</van-button>
+        <van-button type="info" class="btn" @click="wuliu">查看物流信息</van-button>
     </div>
   </div>
 </template>
@@ -100,6 +108,7 @@ import {
   Field,
   Step,
   Steps,
+  Popover
 } from "vant";
 export default {
   components: {
@@ -115,7 +124,22 @@ export default {
     [Field.name]: Field,
     [Step.name]: Step,
     [Steps.name]: Steps,
+    [Popover.name]: Popover,
   },
+  data(){
+    return{
+      showPopover: false,
+      actions: [{ text: '首页' }, { text: '分类' }, { text: '购物车' }, { text: '会员中心' }],
+    }
+  },
+  methods:{
+    wuliu(){
+      this.$router.push("/orderkuaidi")
+    },
+    back(){
+      history.back()
+    },
+  }
 };
 </script>
 

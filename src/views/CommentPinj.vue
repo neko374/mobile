@@ -1,15 +1,23 @@
 <template>
   <div class="main">
     <van-row class="g-header">
-      <van-col span="3" offset="1" class="u-icon"
+      <van-col span="3" offset="1" class="u-icon" @click="back"
         ><van-icon name="arrow-left"
       /></van-col>
       <van-col span="16" class="texts">
         <span>商品评价</span>
       </van-col>
       <van-col span="3" offset="1" class="u-icon"
-        ><van-icon name="ellipsis"
-      /></van-col>
+        ><van-popover
+          v-model="showPopover"
+          theme="dark"
+          trigger="click"
+          :actions="actions"
+        >
+          <template #reference>
+            <van-icon name="ellipsis" />
+          </template> </van-popover
+      ></van-col>
     </van-row>
     <van-card
       num="2"
@@ -21,17 +29,17 @@
     <div class="score">
       <span>评分</span>
       <br />
-      <br>
+      <br />
       <span>描述：<van-rate v-model="value" size=".8rem" /></span>
       <br />
-      <br>
-      
+      <br />
+
       <span>服务：<van-rate v-model="value" size=".8rem" /></span>
       <br />
-      <br>
+      <br />
       <span>发货：<van-rate v-model="value" size=".8rem" /></span>
       <br />
-      <br>
+      <br />
       <span>物流：<van-rate v-model="value" size=".8rem" /></span>
       <br />
     </div>
@@ -58,10 +66,10 @@ import {
   Image as VanImage,
   Card,
   Field,
+  Popover
 } from "vant";
 export default {
   components: {
-      
     [Tab.name]: Tab,
     [Tabs.name]: Tabs,
     [Button.name]: Button,
@@ -72,13 +80,26 @@ export default {
     [VanImage.name]: VanImage,
     [Card.name]: Card,
     [Field.name]: Field,
+    [Popover.name]: Popover,
   },
   data() {
     return {
-        message:"",
+      message: "",
       value: 0,
+      showPopover: false,
+      actions: [
+        { text: "首页" },
+        { text: "分类" },
+        { text: "购物车" },
+        { text: "会员中心" },
+      ],
     };
   },
+  methods:{
+    back(){
+      history.back()
+    },
+  }
 };
 </script>
 
@@ -93,25 +114,24 @@ export default {
   font-size: 1rem;
   text-align: center;
 }
-.score{
-    width: 90%;
-    margin: 1rem auto;
+.score {
+  width: 90%;
+  margin: 1rem auto;
 }
-.score span{
-    font-size: 1rem;
+.score span {
+  font-size: 1rem;
 }
-.textarea{
-    width: 90%;
-    height: 6rem;
-    margin: 1rem auto;
-    background: #FAFAFA;
-    border: 1px solid #DDDDDD;
+.textarea {
+  width: 90%;
+  height: 6rem;
+  margin: 1rem auto;
+  background: #fafafa;
+  border: 1px solid #dddddd;
 }
-.btn{
-    display: block;
-    width: 90%;
-    border-radius: 1rem;
-    margin: 1rem auto;
+.btn {
+  display: block;
+  width: 90%;
+  border-radius: 1rem;
+  margin: 1rem auto;
 }
-
 </style>
