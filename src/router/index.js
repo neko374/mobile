@@ -178,12 +178,6 @@ const routes = [
     name: 'Exchangelist',
     component: () => import('../views/Exchangelist.vue')
   },
-  ,
-  {
-    path: '/foodssku',
-    name: 'FoodsSku',
-    component: () => import('../components/FoodsSku.vue')
-  }
 ]
 
 const router = new VueRouter({
