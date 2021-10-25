@@ -14,7 +14,14 @@ import './assets/css/zy_vip.css'
 import axios from "axios"
 import './comm'
 import './mock'
-import { Tabbar, TabbarItem, NavBar, Swipe, SwipeItem, List, Pagination, Search, Sidebar, SidebarItem, Grid, GridItem, CellGroup, Cell ,Button,Col, Row,Icon ,Lazyload , Collapse, CollapseItem,Image as VanImage,Panel} from 'vant'
+import {
+  Tabbar, TabbarItem, NavBar, Swipe, SwipeItem, List,
+  Pagination, Search, Sidebar, SidebarItem, Grid, GridItem, CellGroup, Cell, Button, Col,
+  Row, Icon, Lazyload, Collapse, CollapseItem, Image as VanImage, Panel,Form ,Tab, Tabs,
+  DropdownMenu, DropdownItem,Popover,Dialog,Checkbox, CheckboxGroup,Uploader,RadioGroup, Radio,Sku,
+  NoticeBar ,Divider 
+} from 'vant'
+import  Field  from 'vant';//单拿出来不加中括号
 Vue.config.productionTip = false
 Vue.prototype.$http = axios
 Vue.use(Tabbar)
@@ -31,7 +38,6 @@ Vue.use(Grid);
 Vue.use(GridItem);
 Vue.use(CellGroup)
 Vue.use(Cell)
-//
 Vue.use(Button);
 Vue.use(Col);
 Vue.use(Row);
@@ -41,6 +47,22 @@ Vue.use(Collapse);
 Vue.use(CollapseItem);
 Vue.use(VanImage);
 Vue.use(Panel);
+Vue.use(Form);
+Vue.use(Tab);
+Vue.use(Tabs);
+Vue.use(Field);
+Vue.use(NoticeBar);
+Vue.use(Divider);
+Vue.use(DropdownMenu);
+Vue.use(DropdownItem);
+Vue.use(Popover);
+Vue.use(Dialog);
+Vue.use(Checkbox);
+Vue.use(CheckboxGroup);
+Vue.use(Uploader);
+Vue.use(Radio);
+Vue.use(RadioGroup);
+Vue.use(Sku);
 new Vue({
   router,
   store,
