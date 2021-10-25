@@ -1,22 +1,15 @@
 <template>
   <div>
     <van-row class="top">
-      <van-col span="3">
+      <van-col >
         <van-icon name="arrow-left" />
       </van-col>
-      <van-col span="17">
+
+      <van-col span="24">
         <van-tabs type="card">
-          <van-tab title="标签 1"> </van-tab>
-          <van-tab title="标签 2">内容 2</van-tab>
-          <van-tab title="标签 3">内容 3</van-tab>
-        </van-tabs>
-      </van-col>
-      <van-col span="3">
-        <van-icon name="ellipsis" />
-      </van-col>
-    </van-row>
-    <!-- 轮播 -->
-    <van-row span="24">
+          <van-tab title="标签 1" class="t_one">
+               <!-- 轮播 -->
+    <van-row>
       <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
         <van-swipe-item
           v-for="(item, index) in imgslist"
@@ -45,7 +38,29 @@
     </van-row>
     <!-- 商品规格 -->
     <van-row>
-
+       <!-- 基础用法 -->
+    <div class="sku-container">
+      <van-sku
+        v-model="showBase"
+        :sku="skuData.sku"
+        :goods="skuData.goods_info"
+        :goods-id="skuData.goods_id"
+        :hide-stock="skuData.sku.hide_stock"
+        :quota="skuData.quota"
+        :quota-used="skuData.quota_used"
+        :initial-sku="initialSku"
+        reset-stepper-on-hide
+        reset-selected-sku-on-hide
+        disable-stepper-input
+        :close-on-click-overlay="closeOnClickOverlay"
+        :custom-sku-validator="customSkuValidator"
+        @buy-clicked="onBuyClicked"
+        @add-cart="onAddCartClicked"
+      />
+      <van-button color="#BCBCBC" @click="showBase = true" size="large">
+        请选择糕点口味
+      </van-button>
+    </div>
     </van-row>
     <!-- 商品详情 -->
     <van-row>
@@ -55,11 +70,23 @@
 </van-panel>
       
     </van-row>
+             </van-tab>
+          <van-tab title="标签 2">内容 2</van-tab>
+          <van-tab title="标签 3">内容 3</van-tab>
+        </van-tabs>
+      </van-col>
+      
+      <van-col >
+        <van-icon name="ellipsis" />
+      </van-col>
+    </van-row>
+ 
   </div>
 </template>
 
 <script>
 import { Tab, Tabs, Swipe, SwipeItem, ImagePreview, Card,Sku,} from "vant";
+import skuData from "../assets/goods/sku"
 export default {
   components: {
     [Tab.name]: Tab,
@@ -72,6 +99,20 @@ export default {
   },
   data() {
     return {
+      //规格
+       skuData: skuData,
+      showBase: false,
+      showCustom: false,
+      showStepper: false,
+      showSoldout: false,
+      closeOnClickOverlay: true,
+      initialSku: {
+        s1: "30349",
+        s2: "1193",
+        selectedNum: 3,
+      },
+      customSkuValidator: () => "请选择xxx!",
+      //轮播图
       imgslist: [
         "http://localhost:8080/images/big_5.jpg",
         "http://localhost:8080/images/pic01.jpg",
@@ -92,6 +133,17 @@ export default {
     };
   },
   methods: {
+    //规格
+     onBuyClicked(data) {
+      this.$toast("buy:" + JSON.stringify(data));
+      console.log(JSON.stringify(data));
+    },
+
+    onAddCartClicked(data) {
+      this.$toast("add cart:" + JSON.stringify(data));
+    },
+  
+  //
     getImg(images, index) {
       ImagePreview({
         images: this.imgslist, //预览图片的数组
@@ -105,6 +157,11 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.demo-sku {
+  .sku-container {
+    padding: 0 15px;
+  }
+  }
 .top {
   height: 2.7rem;
   background-color: #f5f5f5;
@@ -117,6 +174,7 @@ export default {
   width: 100%;
   height: 20rem;
 }
+
 .l_new{
   color: red;
   margin-top: .3125rem;
