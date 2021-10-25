@@ -1,7 +1,7 @@
 <template>
   <div>
     <van-row>
-    <van-nav-bar title="送货上门" left-text="返回" left-arrow>
+    <van-nav-bar title="送货上门" left-text="返回" left-arrow @click-left="onClickLeft">
   <template #right>
     <van-icon name="ellipsis" />
   </template>
@@ -63,7 +63,7 @@ export default {
   },
   methods: {
             onClickLeft() {
-      Toast('返回');
+     this.$router.go(-1)
     },
     // 全部选项选择完毕后，会触发 finish 事件
     onFinish({ selectedOptions }) {
