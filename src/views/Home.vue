@@ -57,7 +57,7 @@
           <van-image>
             <van-grid class="list-img">
               <van-grid-item v-for="item in gridData" :key="item.id">
-                <router-link :to="'//' + item.id">
+                <router-link to="/category">
                   <van-image
                     class="list-img-pic"
                     :src="item.pic"
