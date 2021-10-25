@@ -14,6 +14,13 @@
     <div class="content">
       <van-form @submit="onSubmit" class="u-form">
         <van-field class="u-field"
+          v-model="oldpassword"
+          name="原密码"
+          label="原密码"
+          placeholder="请输入原密码"
+          :rules="[{ required: true, message: '请填写原密码' }]"
+        />
+        <van-field class="u-field"
           v-model="password"
           name="新密码"
           label="新密码"
@@ -40,6 +47,7 @@
 export default {
   data() {
     return {
+      oldpassword:"",
       password: "",
       repassword: "",
     };
