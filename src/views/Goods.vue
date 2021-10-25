@@ -80,12 +80,20 @@
         <van-icon name="ellipsis" />
       </van-col>
     </van-row>
- 
+ <van-row>
+   <van-goods-action>
+  <van-goods-action-icon icon="chat-o" text="客服" color="#ee0a24" />
+  <van-goods-action-icon icon="cart-o" text="购物车" />
+  <van-goods-action-icon icon="star" text="已收藏" color="#ff5000" />
+  <van-goods-action-button type="warning" text="加入购物车" />
+  <van-goods-action-button type="danger" text="立即购买" />
+</van-goods-action>
+ </van-row>
   </div>
 </template>
 
 <script>
-import { Tab, Tabs, Swipe, SwipeItem, ImagePreview, Card,Sku,} from "vant";
+import { Tab, Tabs, Swipe, SwipeItem, ImagePreview, Card,Sku,GoodsAction, GoodsActionIcon, GoodsActionButton} from "vant";
 import skuData from "../assets/goods/sku"
 export default {
   components: {
@@ -94,6 +102,9 @@ export default {
     [Swipe.name]: Swipe,
     [Card.name]: Card,
     [Sku.name]: Sku,
+     [GoodsAction.name]: GoodsAction,
+    [GoodsActionIcon.name]: GoodsActionIcon,
+    [GoodsActionButton.name]: GoodsActionButton,
     [SwipeItem.name]: SwipeItem,
     [ImagePreview.Component.name]: ImagePreview.Component,
   },
