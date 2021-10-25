@@ -21,12 +21,17 @@
     <div class="score">
       <span>评分</span>
       <br />
+      <br>
       <span>描述：<van-rate v-model="value" size=".8rem" /></span>
       <br />
+      <br>
+      
       <span>服务：<van-rate v-model="value" size=".8rem" /></span>
       <br />
+      <br>
       <span>发货：<van-rate v-model="value" size=".8rem" /></span>
       <br />
+      <br>
       <span>物流：<van-rate v-model="value" size=".8rem" /></span>
       <br />
     </div>
