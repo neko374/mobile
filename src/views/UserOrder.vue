@@ -12,9 +12,9 @@
       </van-row>
     </header>
     <div class="content">
-     
+      <div :data="goodsData">
         <van-card
-          num="1"
+          num="2"
           price="645.00"
           desc="原味"
           title="千业吐司面包1Kg半切片三明治早餐蛋糕炼奶乳糕炼奶乳"
@@ -29,7 +29,9 @@
           <van-button round type="info" size="small">退款</van-button>
           <van-button round type="info" size="small"  color="gray">已确认</van-button>
         </div>
+      </div>
         <!--  -->
+      <div >
         <van-card 
           num="1"
           price="645.00"
@@ -47,7 +49,9 @@
           <van-button round type="info" size="small">晒单</van-button>
           <van-button round type="info" size="small"  color="gray">已完成</van-button>
         </div>
+      </div>
         <!--  -->
+      <div>
         <van-card
           num="1"
           price="645.00"
@@ -61,22 +65,25 @@
           共<span >1</span>件商品实付:<span class="totalprice">645.00</span>元
         </div>
         <div class="btnGroup">
-          <van-button round type="info" size="small">取消订单</van-button>
+          <van-button round type="info" size="small" @click="getData">取消订单</van-button>
          
         </div>
         <div class="pagination">
         <van-pagination v-model="currentPage" :page-count="2" mode="simple" />
         </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import axios from "axios";
 import { SwipeCell, Card,Pagination  } from "vant";
 export default {
   data(){
     return{
        currentPage: 1,
+       goodsData:[],
     }
   },
   components: {
@@ -84,6 +91,19 @@ export default {
     [Card.name]: Card,
     [Pagination.name]: Pagination,
   },
+  created() {
+    this.getData();
+  },
+  methods:{
+    async getData() {
+      const result = await axios.get("/userOrder/list");
+      console.log(result);
+      this.goodsdata = result.data;
+      console.log("goodsData:",this.goodsdata);
+  },
+  }
+  
+  
 };
 </script>
 
@@ -120,6 +140,7 @@ header {
   background-color: white;
   text-align: right;
   line-height: 3rem;
+  margin-right: .27rem;
 }
 .goods-card{
   margin-top:.5rem
@@ -129,6 +150,6 @@ header {
   height: 2.5rem;
   background-color: whitesmoke;
   margin-top:.3rem;
-
 }
+
 </style>

@@ -83,6 +83,14 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/pocking.vue')
   },
   {
+    path: '/dizhi',
+    name: 'dizhi',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/Flow_dizhi.vue')
+  },
+  {
     path: '/userbackorder',
     name: 'UserBackOrder',
     component: () => import('../views/UserBackOrder.vue')
@@ -157,6 +165,24 @@ const routes = [
     path: '/usermsg',
     name: 'UserMsg',
     component: () => import('../views/UserMsg.vue')
+  }
+  ,
+  {
+    path: '/exchange',
+    name: 'Exchange',
+    component: () => import('../views/Exchange.vue')
+  }
+  ,
+  {
+    path: '/exchangelist',
+    name: 'Exchangelist',
+    component: () => import('../views/Exchangelist.vue')
+  },
+  ,
+  {
+    path: '/foodssku',
+    name: 'FoodsSku',
+    component: () => import('../components/FoodsSku.vue')
   }
 ]
 

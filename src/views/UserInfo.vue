@@ -12,7 +12,7 @@
       </van-row>
     </header>
     <div class="content">
-        <van-button type="default" class="u-button">账号安全</van-button>
+        <van-button type="default" class="u-button" >账号安全</van-button>
     </div>
     <div class="foot">
         <van-button type="info" class="e-button">退出当前账号</van-button>
@@ -21,7 +21,18 @@
 </template>
 
 <script>
-export default {};
+
+export default {
+  data(){
+    return{
+        
+
+    }
+  },
+  methods:{
+    
+  }
+};
 </script>
 
 <style lang="less" scoped>
