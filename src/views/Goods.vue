@@ -134,9 +134,9 @@
  <van-row>
    <van-goods-action>
   <van-goods-action-icon icon="chat-o" text="客服" color="#ee0a24" />
-  <van-goods-action-icon icon="cart-o" text="购物车" />
+  <van-goods-action-icon icon="cart-o" text="购物车" @click="gocar"/>
   <van-goods-action-icon icon="star" text="已收藏" color="#ff5000" />
-  <van-goods-action-button type="warning" text="加入购物车" />
+  <van-goods-action-button type="warning" text="加入购物车" @click="gocar"/>
   <van-goods-action-button type="danger" text="立即购买" />
 </van-goods-action>
  </van-row>
@@ -144,7 +144,7 @@
 </template>
 
 <script>
-import { Tab, Tabs, Swipe, SwipeItem, ImagePreview, Card,Sku,GoodsAction, GoodsActionIcon, GoodsActionButton} from "vant";
+import { Tab, Tabs, Swipe, SwipeItem, ImagePreview, Card,Sku,GoodsAction, GoodsActionIcon, GoodsActionButton,Toast} from "vant";
 import skuData from "../assets/goods/sku"
 export default {
   components: {
@@ -153,6 +153,7 @@ export default {
     [Swipe.name]: Swipe,
     [Card.name]: Card,
     [Sku.name]: Sku,
+    [Toast.name]: Toast,
      [GoodsAction.name]: GoodsAction,
     [GoodsActionIcon.name]: GoodsActionIcon,
     [GoodsActionButton.name]: GoodsActionButton,
@@ -198,6 +199,13 @@ export default {
      //返回
     back(){
       this.$router.go(-1)
+    },
+      //加入购物车
+    cart(){
+      Toast('加入购物车');
+    },
+     gocar(){
+      this.$router.push({name:'flow'})
     },
     //规格
      onBuyClicked(data) {
