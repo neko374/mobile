@@ -18,7 +18,8 @@ import {
   Tabbar, TabbarItem, NavBar, Swipe, SwipeItem, List,
   Pagination, Search, Sidebar, SidebarItem, Grid, GridItem, CellGroup, Cell, Button, Col,
   Row, Icon, Lazyload, Collapse, CollapseItem, Image as VanImage, Panel,Form ,Tab, Tabs,
-  DropdownMenu, DropdownItem,Popover,Dialog,Checkbox, CheckboxGroup,Uploader,RadioGroup, Radio,Sku
+  DropdownMenu, DropdownItem,Popover,Dialog,Checkbox, CheckboxGroup,Uploader,RadioGroup, Radio,Sku,
+  NoticeBar ,Divider 
 } from 'vant'
 import  Field  from 'vant';//单拿出来不加中括号
 Vue.config.productionTip = false
@@ -49,6 +50,9 @@ Vue.use(Panel);
 Vue.use(Form);
 Vue.use(Tab);
 Vue.use(Tabs);
+Vue.use(Field);
+Vue.use(NoticeBar);
+Vue.use(Divider);
 Vue.use(DropdownMenu);
 Vue.use(DropdownItem);
 Vue.use(Popover);
