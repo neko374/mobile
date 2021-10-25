@@ -122,11 +122,16 @@
         <van-col span="1"></van-col>
       </van-row>
     </div>
+    <navb></navb>
   </div>
 </template>
 
 <script>
-export default {};
+import navb from "../components/navb.vue";
+
+export default {
+  components: { navb },
+};
 </script>
 
 <style scoped>
