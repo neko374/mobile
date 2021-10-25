@@ -12,7 +12,7 @@
     </van-row>
 
     <!-- 收货 -->
-    <van-row class="s-box">
+    <van-row class="s-box" @click="godizhi">
         <van-col span="3">
             <van-icon name="location-o" color="#fff" size="40" />
         </van-col>
@@ -104,6 +104,10 @@ export default {
     };
   },
   methods: {
+        //dizhi
+      godizhi(){
+          this.$router.push({name:'dizhi'})
+      },
        onClickLeft() {
       this.$router.go(-1)
     },

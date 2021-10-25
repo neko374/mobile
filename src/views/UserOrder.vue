@@ -3,7 +3,7 @@
     <header>
       <van-row>
         <van-col span="4">
-          <van-icon name="arrow-left" />
+          <van-icon name="arrow-left" @click="back"/>
         </van-col>
         <van-col span="16"> 我的订单 </van-col>
         <van-col span="4">
@@ -11,9 +11,10 @@
         </van-col>
       </van-row>
     </header>
-    <div class="content">
-      <div :data="goodsData">
-        <van-card
+    <div class="content" >
+      <div>
+        <div>
+        <van-card 
           num="2"
           price="645.00"
           desc="原味"
@@ -22,6 +23,7 @@
           thumb="../assets/images/pic03.jpg"
         >
         </van-card>
+        </div>
         <div class="total">
           共<span >1</span>件商品实付:<span class="totalprice">645.00</span>元
         </div>
@@ -101,6 +103,9 @@ export default {
       this.goodsdata = result.data;
       console.log("goodsData:",this.goodsdata);
   },
+  back(){
+      history.back()
+  }
   }
   
   

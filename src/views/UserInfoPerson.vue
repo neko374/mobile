@@ -3,7 +3,7 @@
     <header>
       <van-row>
         <van-col span="4">
-          <van-icon name="arrow-left" />
+          <van-icon name="arrow-left"  @click="back" />
         </van-col>
         <van-col span="16"> 账号信息 </van-col>
         <van-col span="4">
@@ -57,6 +57,11 @@ export default {
     return {
       radio: '1',
     };
+  },
+  methods:{
+     back(){
+        history.back()
+      }
   },
   components: {
     [DatetimePicker.name]: DatetimePicker,

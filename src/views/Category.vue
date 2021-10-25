@@ -2,7 +2,7 @@
   <div>
     <form action="/">
       <van-search
-        v-model="value"
+        v-model="searchname"
         show-action
         action-text="筛选"
         shape="round"
@@ -34,7 +34,8 @@
         :class="{ active: idx === 3 }"
         to="/category/list"
         @click.native="changeIdx(3)"
-        ><van-icon name="bars" color="blue" /></router-link>
+        ><van-icon name="bars" color="blue"
+      /></router-link>
     </div>
     <div><router-view /></div>
     <navb></navb>
@@ -49,9 +50,10 @@ export default {
   components: { navb },
   data() {
     return {
-      value: "",
       activeKey: 0,
       lists: [],
+      searchname: "",
+      filterData: [],
       ruleForm: {
         id: "",
         name: "",
@@ -73,6 +75,26 @@ export default {
     },
     changeIdx(i) {
       this.idx = i;
+    },
+  },
+  watch: {
+    searchname(val) {
+      this.filterData = [];
+      let flag = false;
+      for (let i = 0; i < this.lists.length; i++) {
+        if (this.lists[i].name.includes(val)) {
+          this.filterData.push(this.lists[i]);
+          flag = true;
+        }
+      }
+      if (flag) {
+        this.lists = this.filterData;
+      } else {
+        this.lists = [];
+      }
+      if (val === "") {
+        this.getData();
+      }
     },
   },
 };
