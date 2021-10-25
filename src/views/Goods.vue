@@ -7,7 +7,7 @@
 
       <van-col span="24">
         <van-tabs type="card">
-          <van-tab title="标签 1" class="t_one">
+          <van-tab title="商品" class="t_one">
                <!-- 轮播 -->
     <van-row>
       <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
@@ -71,8 +71,59 @@
       
     </van-row>
              </van-tab>
-          <van-tab title="标签 2">内容 2</van-tab>
-          <van-tab title="标签 3">内容 3</van-tab>
+          <van-tab title="详情">
+                  <van-panel title="商品信息">
+  <div class="word">
+    <ul>
+      <li>
+        <span>产品标准号：</span>
+        <span> SC12435068101915</span>
+      </li>
+       <li>
+        <span>厂号：</span>
+        <span> 丹夫集团有限公司</span>
+      </li>
+       <li>
+        <span>厂址：</span>
+        <span> 龙海市东园镇工业区厂家</span>
+      </li>
+       <li>
+        <span>联系方式：</span>
+        <span>  0596-6711333</span>
+      </li>
+        <li>
+        <span>配料表：</span>
+        <span>鲜鸡蛋，白砂糖，小麦粉，植物油，水，食品添加...</span>
+      </li>
+        <li>
+        <span>储藏方法：</span>
+        <span>常温储存，避免放于日晒，高温和潮湿的地方</span>
+      </li>
+         <li>
+        <span>保质期：</span>
+        <span>180天</span>
+      </li>
+         <li>
+        <span>食品添加剂：</span>
+        <span>山梨糖醇液，甘油，丙二醇，改性大豆磷脂</span>
+      </li>
+           <li>
+        <span>脂肪酸：</span>
+        <span>Danco/丹夫系列: 1.5kg原味</span>
+      </li>
+           <li>
+        <span>口味：</span>
+        <span>原味（畅销口味） 奶油味（奶香浓郁)</span>
+      </li>
+    </ul>
+  </div>
+</van-panel>
+          </van-tab>
+          <van-tab title="评价">
+              <van-panel title="匿名" desc="果断五星，下次再来" status="2017-12-04">
+  <div></div>
+</van-panel>
+          </van-tab>
         </van-tabs>
       </van-col>
       
@@ -168,6 +219,9 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.word ul li{
+  font-size: .5rem;
+}
 .demo-sku {
   .sku-container {
     padding: 0 15px;
