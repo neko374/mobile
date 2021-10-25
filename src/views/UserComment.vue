@@ -105,12 +105,104 @@
       </van-tab>
       <van-tab>
         <template #title class="choose"> 待评价</template>
-        <div>待评价</div>
+        <div class="shops">
+            <div class="oneshop" v-for="(item, index) in listData" :key="index" v-if="item.btn1==1">
+            <div class="rate">
+              <span>评价：<van-rate v-model="item.starts" size=".8rem" /></span>
+              <span>{{ item.time }}</span>
+            </div>
+            <br />
+            <span>{{ item.comment }}</span>
+            <br />
+            <span>晒单：{{ item.descp }}</span>
+            <br />
+            <van-image
+              width="3rem"
+              height="3rem"
+              src="http://localhost:8080/images/pic02.jpg"
+            />
+            <van-image
+              width="3rem"
+              height="3rem"
+              src="http://localhost:8080/images/pic05.jpg"
+            />
+            <br />
+            <van-card
+              num="2"
+              price="205.00"
+              desc="散装健康休闲食品农家米锅巴"
+              title="益克孕妇零食小米锅巴小米煎饼手工"
+              thumb="http://localhost:8080/images/big_5.jpg"
+            />
+            <van-row>
+              <van-col span="13"></van-col>
+              <van-col span="11">
+                <van-button
+              type="info"
+              class="btn btn1"
+              size="small"
+              v-if="item.btn1 == 1"
+              @click="pinj">发表评价</van-button
+            >
+            <van-button type="info" class="btn btn2" size="small"
+              @click="shaid">发表晒单</van-button
+            >
+              </van-col>
+            </van-row>
+            
+          </div>
+        </div>
         <comment-foot></comment-foot>
       </van-tab>
       <van-tab>
         <template #title class="choose"> 已评价</template>
-        <div>已评价</div>
+        <div class="shops">
+            <div class="oneshop" v-for="(item, index) in listData" :key="index" v-if="item.btn1!=1">
+            <div class="rate">
+              <span>评价：<van-rate v-model="item.starts" size=".8rem" /></span>
+              <span>{{ item.time }}</span>
+            </div>
+            <br />
+            <span>{{ item.comment }}</span>
+            <br />
+            <span>晒单：{{ item.descp }}</span>
+            <br />
+            <van-image
+              width="3rem"
+              height="3rem"
+              src="http://localhost:8080/images/pic02.jpg"
+            />
+            <van-image
+              width="3rem"
+              height="3rem"
+              src="http://localhost:8080/images/pic05.jpg"
+            />
+            <br />
+            <van-card
+              num="2"
+              price="205.00"
+              desc="散装健康休闲食品农家米锅巴"
+              title="益克孕妇零食小米锅巴小米煎饼手工"
+              thumb="http://localhost:8080/images/big_5.jpg"
+            />
+            <van-row>
+              <van-col span="13"></van-col>
+              <van-col span="11">
+                <van-button
+              type="info"
+              class="btn btn1"
+              size="small"
+              v-if="item.btn1 == 1"
+              @click="pinj">发表评价</van-button
+            >
+            <van-button type="info" class="btn btn2" size="small"
+              @click="shaid">发表晒单</van-button
+            >
+              </van-col>
+            </van-row>
+            
+          </div>
+        </div>
         <comment-foot></comment-foot>
       </van-tab>
     </van-tabs>
