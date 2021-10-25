@@ -57,7 +57,7 @@
           <van-image>
             <van-grid class="list-img">
               <van-grid-item v-for="item in gridData" :key="item.id">
-                <router-link :to="'//' + item.id">
+                <router-link to="/category">
                   <van-image
                     class="list-img-pic"
                     :src="item.pic"
@@ -105,6 +105,7 @@
     </van-row>
     <!-- 商城公告 -->
     <van-row class="v-gg">
+    <router-link to="/newsList">
       <van-col span="5">
         <van-image
           width="80"
@@ -112,6 +113,7 @@
           src="http://localhost:8080/images/news_tit.png"
         />
       </van-col>
+         </router-link>
       <van-col span="19">
         <van-notice-bar left-icon="volume-o" :scrollable="false">
           <van-swipe

@@ -34,7 +34,7 @@
           />
           <div style="margin: 16px">
             <van-button round block type="info" native-type="submit"
-              >登录</van-button
+               @click="Login()">登录</van-button
             >
           </div>
         </div>
@@ -61,6 +61,14 @@ export default {
     onSubmit(values) {
       console.log("submit", values);
     },
+     Login(){
+      if(this.username==="admin"&&this.password==="123"){
+        console.log("登录成功");
+        this.$router.push("/");
+      }else{
+        console.log("登录失败");
+      }
+    }
   },
 };
 </script>

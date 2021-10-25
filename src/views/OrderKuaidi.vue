@@ -5,7 +5,7 @@
         ><van-icon name="arrow-left"
       /></van-col>
       <van-col span="16" class="texts">
-        <span>商品晒单</span>
+        <span>物流详情</span>
       </van-col>
       <van-col span="3" offset="1" class="u-icon"
         ><van-popover
@@ -19,43 +19,32 @@
         </template>
       </van-popover></van-col>
     </van-row>
-
+    <div class="title">订单商品</div>
     <van-card
-      num="2"
-      price="205.00"
-      desc="散装健康休闲食品农家米锅巴"
-      title="益克孕妇零食小米锅巴小米煎饼手工"
-      thumb="http://localhost:8080/images/big_5.jpg"
-    />
-    <div class="main">
-      <span>标题：</span>
-      <br />
-      <van-field
-        v-model="message"
-        rows="2"
-        autosize
-        type="textarea"
-        class="textarea oneLine"
+        num="2"
+        price="145.00"
+        desc="草莓味"
+        title="千业吐司面包1Kg半切片三明治早餐蛋糕炼奶乳糕炼奶乳动"
+        thumb="http://localhost:8080/images/big_5.jpg"
       />
-      <br />
-      <span>内容：</span>
-      <br />
-      <van-field
-        v-model="message"
-        rows="2"
-        autosize
-        type="textarea"
-        class="textarea"
-      />
-      <span>上传图片：</span>
-      <br />
-      <van-uploader :show-upload="true" upload-text="111">
-        <van-button v-model="fileList" class="upload">上传文件</van-button>
-      </van-uploader>
-      <br>
-      <span>匿名评价</span>
-      <van-button type="info" class="btn">发表评价</van-button>
+      <div class="line"></div>
+    <div class="info">
+        <span>同城快递</span>
+        <br>
+        <span>运单号码：2018080609875</span>
+        <br>
+        <span>物流状态：等待发货</span>
     </div>
+    <van-steps direction="vertical" :active="0" class="wuliu">
+      物流信息
+      <van-step>
+        <h3>等待发货</h3>
+      </van-step>
+      <van-step>
+        <h3>卖家未发货</h3>
+      </van-step>
+      <van-step> </van-step>
+    </van-steps>
   </div>
 </template>
 
@@ -71,11 +60,12 @@ import {
   Image as VanImage,
   Card,
   Field,
-  Uploader,
+  Step,
+  Steps,
   Popover
 } from "vant";
 export default {
-  components: {
+    components: {
     [Tab.name]: Tab,
     [Tabs.name]: Tabs,
     [Button.name]: Button,
@@ -86,16 +76,15 @@ export default {
     [VanImage.name]: VanImage,
     [Card.name]: Card,
     [Field.name]: Field,
-    [Uploader.name]: Uploader,
+    [Step.name]: Step,
+    [Steps.name]: Steps,
     [Popover.name]: Popover,
   },
-  data() {
-    return {
-      message: "",
-      fileList: "",
+  data(){
+    return{
       showPopover: false,
       actions: [{ text: '首页' }, { text: '分类' }, { text: '购物车' }, { text: '会员中心' }],
-    };
+    }
   },
   methods:{
     back(){
@@ -116,32 +105,29 @@ export default {
   font-size: 1rem;
   text-align: center;
 }
-.textarea {
-  height: 6rem;
-  margin: 1rem auto;
-  background: #fafafa;
-  border: 1px solid #dddddd;
+.title{
+    font-size: 1rem;
+    color: #4AA3E6;
+    border-bottom: 2px solid #4AA3E6;
+    text-indent:1rem;
+    height: 3rem;
+    line-height: 3rem;
 }
-.main {
-  width: 90%;
-  margin: 1rem auto;
+.line{
+    width: 100%;
+    height: .8rem;
+    background: #dddddd;
 }
-.mian span {
-  font-size: 1rem;
-}
-.oneLine {
-  height: 2rem;
-}
-.upload {
-  width: 5rem;
-  height: 2rem;
-  background: #fafafa;
-  margin: 1rem 0;
-}
-.btn{
-    display: block;
+.info{
     width: 90%;
-    border-radius: 1rem;
     margin: 1rem auto;
+    border-bottom: 1px solid #dddddd;
+    line-height: 1.5rem;
+    font-size: 1rem;
+    color: #666;
+}
+.wuliu {
+  font-size: 1rem;
+  color: #666666;
 }
 </style>

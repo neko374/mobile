@@ -1,13 +1,13 @@
 <template>
   <div>
     <van-row class="top">
-      <van-col >
-        <van-icon name="arrow-left" />
+      <van-col class="bac">
+        <span v-on:click="back"><van-icon name="arrow-left" /></span>
       </van-col>
 
       <van-col span="24">
         <van-tabs type="card">
-          <van-tab title="标签 1" class="t_one">
+          <van-tab title="商品" class="t_one">
                <!-- 轮播 -->
     <van-row>
       <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
@@ -61,9 +61,17 @@
         请选择糕点口味
       </van-button>
     </div>
+    <div class="shops">
+      <span>数量：</span>
+      <van-stepper v-model="value" class="bu" />
+      <div>库存：<span>400</span></div>
+    </div>
+     <div class="shops" @click="gomen">送货上门
+      <span>></span>
+    </div>
     </van-row>
     <!-- 商品详情 -->
-    <van-row>
+    <van-row class="xq_box">
       
         <van-panel title="商品详情">
   <van-image src="http://localhost:8080/images/goods_xqpic.jpg"></van-image>
@@ -71,8 +79,59 @@
       
     </van-row>
              </van-tab>
-          <van-tab title="标签 2">内容 2</van-tab>
-          <van-tab title="标签 3">内容 3</van-tab>
+          <van-tab title="详情">
+                  <van-panel title="商品信息">
+  <div class="word">
+    <ul>
+      <li>
+        <span>产品标准号：</span>
+        <span> SC12435068101915</span>
+      </li>
+       <li>
+        <span>厂号：</span>
+        <span> 丹夫集团有限公司</span>
+      </li>
+       <li>
+        <span>厂址：</span>
+        <span> 龙海市东园镇工业区厂家</span>
+      </li>
+       <li>
+        <span>联系方式：</span>
+        <span>  0596-6711333</span>
+      </li>
+        <li>
+        <span>配料表：</span>
+        <span>鲜鸡蛋，白砂糖，小麦粉，植物油，水，食品添加...</span>
+      </li>
+        <li>
+        <span>储藏方法：</span>
+        <span>常温储存，避免放于日晒，高温和潮湿的地方</span>
+      </li>
+         <li>
+        <span>保质期：</span>
+        <span>180天</span>
+      </li>
+         <li>
+        <span>食品添加剂：</span>
+        <span>山梨糖醇液，甘油，丙二醇，改性大豆磷脂</span>
+      </li>
+           <li>
+        <span>脂肪酸：</span>
+        <span>Danco/丹夫系列: 1.5kg原味</span>
+      </li>
+           <li>
+        <span>口味：</span>
+        <span>原味（畅销口味） 奶油味（奶香浓郁)</span>
+      </li>
+    </ul>
+  </div>
+</van-panel>
+          </van-tab>
+          <van-tab title="评价">
+              <van-panel title="匿名" desc="果断五星，下次再来" status="2017-12-04">
+  <div></div>
+</van-panel>
+          </van-tab>
         </van-tabs>
       </van-col>
       
@@ -80,12 +139,20 @@
         <van-icon name="ellipsis" />
       </van-col>
     </van-row>
- 
+ <van-row>
+   <van-goods-action>
+  <van-goods-action-icon icon="chat-o" text="客服" color="#ee0a24" />
+  <van-goods-action-icon icon="cart-o" text="购物车" @click="gocar"/>
+  <van-goods-action-icon icon="star" text="已收藏" color="#ff5000" />
+  <van-goods-action-button type="warning" text="加入购物车" @click="gocar"/>
+  <van-goods-action-button type="danger" text="立即购买" />
+</van-goods-action>
+ </van-row>
   </div>
 </template>
 
 <script>
-import { Tab, Tabs, Swipe, SwipeItem, ImagePreview, Card,Sku,} from "vant";
+import { Tab, Tabs, Swipe, SwipeItem, ImagePreview, Card,Sku,GoodsAction, GoodsActionIcon, GoodsActionButton,Toast,Stepper} from "vant";
 import skuData from "../assets/goods/sku"
 export default {
   components: {
@@ -94,6 +161,11 @@ export default {
     [Swipe.name]: Swipe,
     [Card.name]: Card,
     [Sku.name]: Sku,
+    [Stepper.name]: Stepper,
+    [Toast.name]: Toast,
+     [GoodsAction.name]: GoodsAction,
+    [GoodsActionIcon.name]: GoodsActionIcon,
+    [GoodsActionButton.name]: GoodsActionButton,
     [SwipeItem.name]: SwipeItem,
     [ImagePreview.Component.name]: ImagePreview.Component,
   },
@@ -133,6 +205,21 @@ export default {
     };
   },
   methods: {
+     //返回
+    back(){
+      this.$router.go(-1)
+    },
+      //加入购物车
+    cart(){
+      Toast('加入购物车');
+    },
+     gocar(){
+      this.$router.push({name:'flow'})
+    },
+        //送货上门
+    gomen(){
+      this.$router.push({name:'pocking'})
+    },
     //规格
      onBuyClicked(data) {
       this.$toast("buy:" + JSON.stringify(data));
@@ -157,6 +244,26 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.bu{
+  margin-right: 8rem;
+}
+.xq_box{
+  border-top: .8rem solid #f5f5f5;
+}
+.shops{
+  font-size: .8rem;
+  padding: .4rem;
+  border-bottom: 4px solid #f5f5f5;
+  border-top: 4px solid #f5f5f5;
+  display: flex;
+  justify-content: space-between;
+}
+.word ul li{
+  font-size: .5rem;
+}
+.word ul li{
+  font-size: .5rem;
+}
 .demo-sku {
   .sku-container {
     padding: 0 15px;
