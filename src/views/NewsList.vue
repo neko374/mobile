@@ -30,6 +30,7 @@
       :items-per-page="5"
       mode="simple"
     />
+    <comment-foot></comment-foot>
     <navb></navb>
   </div>
 </template>
@@ -37,8 +38,9 @@
 <script>
 import axios from "axios";
 import navb from "../components/navb.vue";
+import CommentFoot from "../components/CommentFoot.vue";
 export default {
-  components: { navb },
+  components: { navb, CommentFoot },
   methods: {
     onClickLeft() {
       history.back();
