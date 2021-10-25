@@ -61,6 +61,9 @@
         请选择糕点口味
       </van-button>
     </div>
+     <div class="shops" @click="gomen">送货上门
+      <span class="tou">></span>
+    </div>
     </van-row>
     <!-- 商品详情 -->
     <van-row>
@@ -206,6 +209,10 @@ export default {
     },
      gocar(){
       this.$router.push({name:'flow'})
+    },
+        //送货上门
+    gomen(){
+      this.$router.push({name:'pocking'})
     },
     //规格
      onBuyClicked(data) {
