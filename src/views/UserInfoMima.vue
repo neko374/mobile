@@ -3,7 +3,7 @@
     <header>
       <van-row>
         <van-col span="4">
-          <van-icon name="arrow-left" />
+          <van-icon name="arrow-left" @click="back"/>
         </van-col>
         <van-col span="16"> 账号安全 </van-col>
         <van-col span="4">
@@ -56,6 +56,9 @@ export default {
     onSubmit(values) {
       console.log("submit", values);
     },
+    back(){
+        history.back()
+    }
   },
 };
 </script>
