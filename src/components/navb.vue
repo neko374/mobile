@@ -11,7 +11,9 @@
       <van-tabbar-item icon="cart-o" badge="5"
         ><router-link to="/flow">购物车</router-link></van-tabbar-item
       >
-      <van-tabbar-item icon="friends-o" dot>我的</van-tabbar-item>
+      <van-tabbar-item icon="friends-o" dot
+        ><router-link to="/user">我的</router-link></van-tabbar-item
+      >
     </van-tabbar>
   </div>
 </template>
