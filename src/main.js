@@ -18,7 +18,7 @@ import {
   Tabbar, TabbarItem, NavBar, Swipe, SwipeItem, List,
   Pagination, Search, Sidebar, SidebarItem, Grid, GridItem, CellGroup, Cell, Button, Col,
   Row, Icon, Lazyload, Collapse, CollapseItem, Image as VanImage, Panel,Form ,Tab, Tabs,
-  DropdownMenu, DropdownItem,Popover,Dialog,Checkbox, CheckboxGroup,Uploader,RadioGroup, Radio,Sku,
+  DropdownMenu, DropdownItem,Popover,Dialog,Checkbox, CheckboxGroup,Uploader,RadioGroup, Radio,Sku,Stepper,SubmitBar,
   NoticeBar ,Divider 
 } from 'vant'
 import  Field  from 'vant';//单拿出来不加中括号
@@ -63,6 +63,8 @@ Vue.use(Uploader);
 Vue.use(Radio);
 Vue.use(RadioGroup);
 Vue.use(Sku);
+Vue.use(SubmitBar);
+Vue.use(Stepper);
 new Vue({
   router,
   store,

@@ -9,11 +9,11 @@
       />
     </van-row>
     <!-- 车 -->
-    <van-row >
+    <van-row>
       <van-panel title="盛千辉便利店">
         <van-row class="box">
           <van-col span="18">
-              <!-- 复选框 -->
+            <!-- 复选框 -->
             <van-checkbox v-model="checked">
               <van-card
                 num="2"
@@ -36,9 +36,9 @@
           </van-col>
         </van-row>
 
-         <van-row class="box">
+        <van-row class="box">
           <van-col span="18">
-              <!-- 复选框 -->
+            <!-- 复选框 -->
             <van-checkbox v-model="checked">
               <van-card
                 num="2"
@@ -62,23 +62,18 @@
         </van-row>
       </van-panel>
       <!-- 提交订单 -->
-          <van-submit-bar :price="3050" button-text="去结算">
-                <van-checkbox v-model="checked">全选</van-checkbox>
+      <van-submit-bar :price="3050" button-text="去结算">
+        <van-checkbox v-model="checked">全选</van-checkbox>
       </van-submit-bar>
     </van-row>
+    <navb></navb>
   </div>
 </template>
 
 <script>
-import { Checkbox, CheckboxGroup, SubmitBar, Card, Stepper } from "vant";
+import Navb from "../components/navb.vue";
 export default {
-  components: {
-    [Checkbox.name]: Checkbox,
-    [SubmitBar.name]: SubmitBar,
-    [Card.name]: Card,
-    [Stepper.name]: Stepper,
-    [CheckboxGroup.name]: CheckboxGroup,
-  },
+  components: { Navb },
   data() {
     return {
       checked: true,
@@ -97,21 +92,21 @@ export default {
 .di {
   margin-top: 2rem;
 }
-.box{
-    border-bottom: 1px dashed gray;
+.box {
+  border-bottom: 1px dashed gray;
 }
 .van-card__price {
-    display: inline-block;
-    color: red;
-    font-weight: 500;
-    font-size: 12px;
+  display: inline-block;
+  color: red;
+  font-weight: 500;
+  font-size: 12px;
 }
 .van-card {
-    position: relative;
-    box-sizing: border-box;
-    padding: 8px 16px;
-    color: #323233;
-    font-size: 12px;
-    background-color: white;
+  position: relative;
+  box-sizing: border-box;
+  padding: 8px 16px;
+  color: #323233;
+  font-size: 12px;
+  background-color: white;
 }
 </style>>
