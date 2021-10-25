@@ -45,15 +45,15 @@
               
             />
           </div>
-          <div class="oneshop">
+          <div class="oneshop" v-for="item,index in listData" :key="index">
             <div class="rate">
               <span>评价：<van-rate v-model="value" size=".8rem" /></span>
-              <span>2017-12-06</span>
+              <span>{{item.time}}</span>
             </div>
             <br />
-            <span>很好吃很好吃很好看</span>
+            <span>{{item.comment}}</span>
             <br />
-            <span>晒单：有图有真相</span>
+            <span>晒单：{{item.descp}}</span>
             <br />
             <van-image
               width="3rem"
@@ -73,8 +73,8 @@
               title="益克孕妇零食小米锅巴小米煎饼手工"
               thumb="http://localhost:8080/images/big_5.jpg"
             />
-            <van-button type="info" class="btn btn1" size="small">发表评价</van-button>
-            <van-button type="info" class="btn btn2" size="small">发表晒单</van-button>
+            <van-button type="info" class="btn btn1" size="small" v-if="item.btn1==1">发表评价</van-button>
+            <van-button type="info" class="btn btn2" size="small" >发表晒单</van-button>
           </div>
         </div>
         <comment-foot></comment-foot>
@@ -106,6 +106,7 @@ import {
   Image as VanImage,
   Card,
 } from "vant";
+import axios from "axios";
 import CommentFoot from '../components/CommentFoot.vue';
 
 export default {
@@ -126,8 +127,19 @@ export default {
     return {
       active: "",
       value: 3,
+      listData:[]
     };
   },
+  created(){
+    this.getData()
+  },
+  methods:{
+    async getData() {
+      const result = await axios.get("/comment/list");
+      this.listData = result.data;
+      console.log(result.data);
+    },
+  }
 };
 </script>
 
@@ -164,12 +176,12 @@ export default {
 }
 .btn{
   margin:1rem .5rem 0rem .5rem;
-  
+  text-align: right;
   border-radius: .6rem;
   // position: absolute;
 }
 .btn1{
-  margin-left: 10rem;
+  font-size: 1rem;
 }
 .title{
   font-size: 1rem;

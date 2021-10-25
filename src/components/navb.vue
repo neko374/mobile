@@ -2,7 +2,7 @@
   <div>
     <div style="height: 3rem"></div>
     <van-tabbar v-model="active">
-      <van-tabbar-item icon="home-o">首页</van-tabbar-item>
+      <van-tabbar-item icon="home-o"><router-link to="/home">首页</router-link></van-tabbar-item>
       <van-tabbar-item icon="apps-o"
         ><router-link to="/catelog">分类</router-link></van-tabbar-item
       >

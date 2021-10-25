@@ -23,6 +23,22 @@ const list = Mock.mock({
         }
     ]
 })
+
+let newsinfo1=Mock.mock({
+    "data|4":[
+        {
+            "starts|1-5":1,
+            "time":"@date",
+            "comment":"@ctitle",
+            "descp":"@ctitle",
+            "name":"@ctitle",
+            "price|10-100":30,
+            "btn1|0-3":1,
+            "btn2|0-3":2
+        }
+    ]
+})
+Mock.mock("/comment/list",newsinfo1.data)
 //访问地址,访问数据
 Mock.mock("/news/list",list.data)
 //添加
