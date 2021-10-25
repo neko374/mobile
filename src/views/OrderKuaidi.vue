@@ -1,7 +1,7 @@
 <template>
   <div>
     <van-row class="g-header">
-      <van-col span="3" offset="1" class="u-icon"
+      <van-col span="3" offset="1" class="u-icon" @click="back"
         ><van-icon name="arrow-left"
       /></van-col>
       <van-col span="16" class="texts">
@@ -85,6 +85,11 @@ export default {
       showPopover: false,
       actions: [{ text: '首页' }, { text: '分类' }, { text: '购物车' }, { text: '会员中心' }],
     }
+  },
+  methods:{
+    back(){
+      history.back()
+    },
   }
 };
 </script>
