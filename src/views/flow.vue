@@ -65,8 +65,8 @@
       <van-submit-bar :price="3050" button-text="去结算">
         <van-checkbox v-model="checked">全选</van-checkbox>
       </van-submit-bar>
+      <navb></navb>
     </van-row>
-    <navb></navb>
   </div>
 </template>
 
@@ -82,7 +82,7 @@ export default {
   },
   methods: {
     onClickLeft() {
-      Toast("返回");
+      history.back();
     },
   },
 };
@@ -109,4 +109,4 @@ export default {
   font-size: 12px;
   background-color: white;
 }
-</style>>
+</style>
