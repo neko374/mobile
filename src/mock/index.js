@@ -9,6 +9,12 @@ let newsinfo = Mock.mock({
             "name": "@cname",
             "password|6-12": "string",
             "price|10-200": 20,
+            "username":"number",
+            "username1":"string",
+            "psd": "string",
+            "psdone": "string",
+            "phcode":"string",
+            "code": "string",
         }
     ]
 })
@@ -51,4 +57,15 @@ Mock.mock("/news/add","post",(option)=>{
         msg:"添加成功",
         state:"200"
     }
+})
+// 注册
+Mock.mock("register/upd","post",(option)=>{
+        const reg = JSON.parse(option.body);
+        reg.id = newsinfo.data[newsinfo.data.length-1].id+1
+        newsinfo.data.push(reg)
+        return{
+            msg:"注册成功",
+            state:"200",
+            data:newsinfo.data
+        }
 })
