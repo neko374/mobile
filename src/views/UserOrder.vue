@@ -12,7 +12,7 @@
       </van-row>
     </header>
     <div class="content" >
-      <divxaf>
+      <div>
         <div>
         <van-card 
           num="2"
