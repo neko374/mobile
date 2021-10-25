@@ -62,7 +62,7 @@
         </van-row>
       </van-panel>
       <!-- 提交订单 -->
-      <van-submit-bar :price="3050" button-text="去结算" class="foor">
+      <van-submit-bar :price="3050" button-text="去结算" class="foor" @click="gocar">
         <van-checkbox v-model="checked">全选</van-checkbox>
       </van-submit-bar>
       <navb></navb>
@@ -83,6 +83,10 @@ export default {
   methods: {
     onClickLeft() {
       history.back();
+    },
+    //结算
+     gocar(){
+      this.$router.push({name:'Confirm'})
     },
   },
 };
