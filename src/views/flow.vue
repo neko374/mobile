@@ -62,7 +62,7 @@
         </van-row>
       </van-panel>
       <!-- 提交订单 -->
-      <van-submit-bar :price="3050" button-text="去结算">
+      <van-submit-bar :price="3050" button-text="去结算" class="foor">
         <van-checkbox v-model="checked">全选</van-checkbox>
       </van-submit-bar>
       <navb></navb>
@@ -89,6 +89,9 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.foor{
+  margin-bottom: 3rem;
+}
 .di {
   margin-top: 2rem;
 }
