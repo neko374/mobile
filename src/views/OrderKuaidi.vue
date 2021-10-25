@@ -8,8 +8,16 @@
         <span>物流详情</span>
       </van-col>
       <van-col span="3" offset="1" class="u-icon"
-        ><van-icon name="ellipsis"
-      /></van-col>
+        ><van-popover
+        v-model="showPopover"
+        theme="dark"
+        trigger="click"
+        :actions="actions"
+      >
+        <template #reference>
+          <van-icon name="ellipsis" />
+        </template>
+      </van-popover></van-col>
     </van-row>
     <div class="title">订单商品</div>
     <van-card
@@ -54,6 +62,7 @@ import {
   Field,
   Step,
   Steps,
+  Popover
 } from "vant";
 export default {
     components: {
@@ -69,7 +78,14 @@ export default {
     [Field.name]: Field,
     [Step.name]: Step,
     [Steps.name]: Steps,
+    [Popover.name]: Popover,
   },
+  data(){
+    return{
+      showPopover: false,
+      actions: [{ text: '首页' }, { text: '分类' }, { text: '购物车' }, { text: '会员中心' }],
+    }
+  }
 };
 </script>
 

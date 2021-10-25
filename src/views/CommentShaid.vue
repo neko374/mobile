@@ -8,8 +8,16 @@
         <span>商品晒单</span>
       </van-col>
       <van-col span="3" offset="1" class="u-icon"
-        ><van-icon name="ellipsis"
-      /></van-col>
+        ><van-popover
+        v-model="showPopover"
+        theme="dark"
+        trigger="click"
+        :actions="actions"
+      >
+        <template #reference>
+          <van-icon name="ellipsis" />
+        </template>
+      </van-popover></van-col>
     </van-row>
 
     <van-card
@@ -64,6 +72,7 @@ import {
   Card,
   Field,
   Uploader,
+  Popover
 } from "vant";
 export default {
   components: {
@@ -78,17 +87,20 @@ export default {
     [Card.name]: Card,
     [Field.name]: Field,
     [Uploader.name]: Uploader,
+    [Popover.name]: Popover,
   },
   data() {
     return {
       message: "",
       fileList: "",
+      showPopover: false,
+      actions: [{ text: '首页' }, { text: '分类' }, { text: '购物车' }, { text: '会员中心' }],
     };
   },
 };
 </script>
 
-<style>
+<style scoped>
 .g-header {
   height: 3rem;
   background: rgb(#f5f5f5);
