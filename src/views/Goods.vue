@@ -1,8 +1,8 @@
 <template>
   <div>
     <van-row class="top">
-      <van-col >
-        <van-icon name="arrow-left" />
+      <van-col class="bac">
+        <span v-on:click="back"><van-icon name="arrow-left" /></span>
       </van-col>
 
       <van-col span="24">
@@ -195,6 +195,10 @@ export default {
     };
   },
   methods: {
+     //返回
+    back(){
+      this.$router.go(-1)
+    },
     //规格
      onBuyClicked(data) {
       this.$toast("buy:" + JSON.stringify(data));
