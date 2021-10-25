@@ -61,12 +61,17 @@
         请选择糕点口味
       </van-button>
     </div>
+    <div class="shops">
+      <span>数量：</span>
+      <van-stepper v-model="value" class="bu" />
+      <div>库存：<span>400</span></div>
+    </div>
      <div class="shops" @click="gomen">送货上门
-      <span class="tou">></span>
+      <span>></span>
     </div>
     </van-row>
     <!-- 商品详情 -->
-    <van-row>
+    <van-row class="xq_box">
       
         <van-panel title="商品详情">
   <van-image src="http://localhost:8080/images/goods_xqpic.jpg"></van-image>
@@ -147,7 +152,7 @@
 </template>
 
 <script>
-import { Tab, Tabs, Swipe, SwipeItem, ImagePreview, Card,Sku,GoodsAction, GoodsActionIcon, GoodsActionButton,Toast} from "vant";
+import { Tab, Tabs, Swipe, SwipeItem, ImagePreview, Card,Sku,GoodsAction, GoodsActionIcon, GoodsActionButton,Toast,Stepper} from "vant";
 import skuData from "../assets/goods/sku"
 export default {
   components: {
@@ -156,6 +161,7 @@ export default {
     [Swipe.name]: Swipe,
     [Card.name]: Card,
     [Sku.name]: Sku,
+    [Stepper.name]: Stepper,
     [Toast.name]: Toast,
      [GoodsAction.name]: GoodsAction,
     [GoodsActionIcon.name]: GoodsActionIcon,
@@ -238,6 +244,23 @@ export default {
 </script>
 
 <style lang="less" scoped>
+.bu{
+  margin-right: 8rem;
+}
+.xq_box{
+  border-top: .8rem solid #f5f5f5;
+}
+.shops{
+  font-size: .8rem;
+  padding: .4rem;
+  border-bottom: 4px solid #f5f5f5;
+  border-top: 4px solid #f5f5f5;
+  display: flex;
+  justify-content: space-between;
+}
+.word ul li{
+  font-size: .5rem;
+}
 .word ul li{
   font-size: .5rem;
 }
