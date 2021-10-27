@@ -11,7 +11,7 @@
     </van-swipe>
     <van-list>
       <van-cell v-for="item in lists" :key="item.id">
-        <router-link to="/NewsXq">
+        <router-link :to="{ path: '/NewsXq', query: { id: item.id } }">
           <div class="lis">
             <div style="float: left">
               <p style="color: black">{{ item.title }}</p>

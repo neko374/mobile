@@ -1,7 +1,7 @@
 <template>
   <van-list>
     <van-cell v-for="item in lists" :key="item.id">
-      <router-link to="/goods">
+      <router-link :to="{ path: '/NewsXq', query: { id: item.id } }">
         <div class="lis">
           <div style="float: left">
             <img :src="item.image" />

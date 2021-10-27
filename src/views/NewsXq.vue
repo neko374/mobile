@@ -28,6 +28,7 @@
 </template>
 
 <script>
+import axios from "axios";
 import navb from "../components/navb.vue";
 export default {
   components: { navb },
@@ -35,6 +36,32 @@ export default {
     onClickLeft() {
       history.back();
     },
+    async getData() {
+      const result = await axios.get("/newsList");
+      this.lists = result.data;
+    },
+    getId() {
+      let id = this.$route.query.id;
+      this.newsinfo = this.lists.filter((item) => item.id == id)[0];
+    },
+  },
+
+  created() {
+    this.getId();
+  },
+  data() {
+    return {
+      active: "",
+      currentPage: 1,
+      lists: [],
+      ruleForm: {
+        id: "",
+        title: "",
+        time: "",
+        image: "",
+      },
+      newsinfo: {},
+    };
   },
 };
 </script>
