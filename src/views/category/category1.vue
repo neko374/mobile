@@ -1,13 +1,13 @@
 <template>
   <div>
     <van-grid :column-num="2">
-      <router-link :to="{ path: '/goods', query: { id: item.id } }">
-        <div v-for="item in lists" :key="item.id">
+      <div v-for="item in lists" :key="item.id">
+        <router-link :to="{ path: '/goods', query: { id: item.id } }">
           <img :src="item.image" />
           <p>{{ item.name }}</p>
           <p style="color: red">￥{{ item.price }}</p>
-        </div>
-      </router-link>
+        </router-link>
+      </div>
     </van-grid>
   </div>
 </template>
